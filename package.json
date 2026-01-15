@@ -1,0 +1,20 @@
+{
+  "name": "first-electron-app",
+  "version": "1.0.0",
+  "description": "What will this become?",
+  "homepage": "https://github.com/Jamming17/first-electron-app#readme",
+  "bugs": {
+    "url": "https://github.com/Jamming17/first-electron-app/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jamming17/first-electron-app.git"
+  },
+  "license": "ISC",
+  "author": "jackc",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
