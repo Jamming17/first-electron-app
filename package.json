@@ -15,14 +15,19 @@
   "type": "module",
   "main": "dist/main.js",
   "scripts": {
-    "build": "tsc",
+    "build:react": "cd renderer && npm install && npm run build",
+    "dev:react": "cd renderer && npm run dev",
+    "build:electron": "tsc",
+    "start:electron": "electron .",
+    "build": "npm run build:react && npm run build:electron",
     "start": "npm run build && electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "concurrently -k \"npm:dev:react\" \"wait-on http://localhost:5173 && npm run start:electron\""
   },
   "devDependencies": {
-    "@types/electron": "^1.4.38",
     "@types/node": "^25.0.8",
+    "concurrently": "^9.2.1",
     "electron": "^39.2.7",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "wait-on": "^9.0.3"
   }
 }
