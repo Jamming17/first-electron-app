@@ -12,22 +12,36 @@
   },
   "license": "ISC",
   "author": "jackc",
-  "type": "module",
+  "type": "commonjs",
   "main": "dist/main.js",
   "scripts": {
-    "build:react": "cd renderer && npm install && npm run build",
+    "build:react": "cd renderer && npm run build",
     "dev:react": "cd renderer && npm run dev",
     "build:electron": "tsc",
     "start:electron": "electron .",
     "build": "npm run build:react && npm run build:electron",
-    "start": "npm run build && electron .",
-    "dev": "concurrently -k \"npm:dev:react\" \"wait-on http://localhost:5173 && npm run start:electron\""
+    "start": "electron-forge start",
+    "dev": "concurrently -k \"npm:dev:react\" \"wait-on http://localhost:5173 && npm run start:electron\"",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "devDependencies": {
+    "@electron-forge/cli": "^7.11.1",
+    "@electron-forge/maker-deb": "^7.11.1",
+    "@electron-forge/maker-flatpak": "^7.11.1",
+    "@electron-forge/maker-rpm": "^7.11.1",
+    "@electron-forge/maker-squirrel": "^7.11.1",
+    "@electron-forge/maker-zip": "^7.11.1",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.11.1",
+    "@electron-forge/plugin-fuses": "^7.11.1",
+    "@electron/fuses": "^1.8.0",
     "@types/node": "^25.0.8",
     "concurrently": "^9.2.1",
     "electron": "^39.2.7",
     "typescript": "^5.9.3",
     "wait-on": "^9.0.3"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.1"
   }
 }

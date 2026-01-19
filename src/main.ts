@@ -1,9 +1,11 @@
-import { app, BrowserWindow } from "electron";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
+const { app, BrowserWindow } = require("electron");
+const path = require("node:path");
+const { fileURLToPath } = require("node:url");
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+//const __filename = fileURLToPath(import.meta.url);
+//const __dirname = path.dirname(__filename);
+
+//const indexPath = path.join(__dirname, "dist/renderer/preload.js");
 
 const isDev = !app.isPackaged;
 
